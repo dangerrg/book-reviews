@@ -4,15 +4,15 @@
       <h1 class="gamma">Sign up / Log in</h1>
     </header>
     <main>
-      <form action="#no-action" method="post">
+      <%= form_for(@user) do |form| %>
         <div class="input-group">
-          <label class="input-group__label" for="email">Email address</label>
-          <input id="email" class="input-group__field" type="email" name="email" placeholder="e.g. me@epfl.ch">
+          <%= form.label(:email, class: 'input-group__label') %>
+          <%= form.text_field(:email, class: 'input-group__field', placeholder: 'e.g. me@epfl.ch') %>
         </div>
         <div class="prompt">
-          <button class="btn btn--primary prompt__confirm" type="button">Log in</button>
+          <%= form.submit('Log in', class: 'btn btn--primary prompt__confirm') %>
         </div>
-      </form>
+      <% end %>
     </main>
   </section>
 </main>
