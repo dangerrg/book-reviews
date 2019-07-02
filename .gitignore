@@ -1418,3 +1418,11 @@ tmp/cache/bootsnap-compile-cache/fe/06c6c1033a9a34
 *.sqlite3
 *.sqlite3
 db/development.sqlite3
+tmp/cache/bootsnap-compile-cache/40/bd98baf2084968
+tmp/cache/bootsnap-compile-cache/78/add30d2792b93a
+tmp/cache/bootsnap-compile-cache/e5/bde4e5ac206787
+*.sqlite3
+*.sqlite3
+db/development.sqlite3
+tmp/cache/bootsnap-compile-cache/ba/ce576d10244c52
+db/development.sqlite3
