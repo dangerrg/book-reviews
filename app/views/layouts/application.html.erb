@@ -5,11 +5,90 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/assets/css/main.css">
   </head>
-
   <body>
+
+    <header>
+
+      <!-- <div class="siteHeader__topFullImageContainer" data-reactid=".vbbddinkzk.0">
+
+          <img alt="Goodreads Summer Reading 2019" class="siteHeader__topFullImage" src="https://wallpaperhd.wiki/wp-content/uploads/hd-backgrounds-for-banner-wallpaper.wiki-cool-backgrounds-hd-1080p-wallpaper-pic-wpe0014677.jpg">
+          </img>
+
+      </div> -->
+
+      <div class="site-header">
+        <div class="content-wrapper">
+          <div class="logo">
+            <a href="/"><span>Bo<i>okRev</i>iews</span></a>
+          </div>
+          <nav class="siteHeader__primaryNavInline">
+            <ul class="main-navigation">
+              <li class="nav-item active">
+                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/about.html">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#nolink">My reviews</a>
+              </li>
+            </ul>
+          </nav>
+          <form class="global-search" method="get" action="" role="search">
+            <div class="input-inline">
+              <label class="input-group__label sr-only" for="global-search-input">Looking for inspiration?</label>
+              <div class="input-row">
+                <input id="global-search-input" class="input-row__field" type="text" name="search" placeholder="e.g. Fifty Shades of Grey">
+                <button class="btn btn--inline btn--primary" type="submit">Search</button>
+              </div>
+            </div>
+          </form>
+          <nav class="siteHeader__personal">
+            <ul class="main-navigation">
+              <li class="nav-item">
+                <a class="nav-link" href="/users/new">Log In</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Menu
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="/">Home</a>
+                  <a class="dropdown-item" href="/about.html">About</a>
+                  <a class="dropdown-item" href="#">My reviews</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="/users/new">Log In</a>
+                </div>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
     <%= yield %>
+
+    <footer class="site-footer">
+      <div class="content-wrapper">
+        <div class="logo logo--inverted footer__logo">
+          <a href="/"><span>Bo<i>okRev</i>iews</span></a>
+        </div>
+        <nav class="footer__navigation">
+          <ul>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="#nolink">Privacy policy</a></li>
+            <li><a href="#nolink">Terms of Use</a></li>
+          </ul>
+        </nav>
+        <p class="copyright">&copy; RoyaLWDev 2019</p>
+      </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   </body>
 </html>
