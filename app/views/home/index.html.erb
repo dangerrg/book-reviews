@@ -1,2 +1,99 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<main>
+  <div class="masthead">
+    <div class="content-wrapper">
+      <h1>Get inspired. Create your bucket list. Share.</h1>
+      <form method="get" action=" ">
+        <div class="input-inline">
+          <label class="input-group__label" for="banner-search-input">Inspire me</label>
+          <div class="input-row">
+            <input id="banner-search-input" class="input-row__field" type="text" name="search" placeholder="e.g. Swimming with dolphins">
+            <button class="btn btn--inline" type="submit">Search</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="content-wrapper">
+    <h2>Some ideas</h2>
+    <ul class="bare-list float-grid css-grid">
+      <li class="card">
+          <div class="card__thumb">
+            <a href="ideas/northern-lights.html">
+              <img src="http://fpoimg.com/255x170" alt="Northern lights over mountain covered in snow">
+            </a>
+            <div class="card__intro">
+              <h4 class="card__title">See the Northern lights</h4>
+              <span>1,598 have done this</span>
+            </div>
+          </div>
+          <div class="card__footer">
+            <button class="card__btn card__like delta" data-like="see-the-northern-lights">
+              <svg class="icon-heart" role="presentation">
+                <use href="/images/icons/icons-defs.svg#heart"></use>
+              </svg>
+              Like
+            </button>
+            <button class="card__btn card__add delta" data-addGoal="see-the-northern-lights">
+              <svg class="icon-pluss" role="presentation">
+                <use href="/images/icons/icons-defs.svg#pluss"></use>
+              </svg>
+              Add Goal
+            </button>
+          </div>
+      </li>
+      <li class="card">
+        <div class="card__thumb">
+          <a href="ideas/one-example-idea.html">
+            <img src="http://fpoimg.com/255x170" alt="Placeholder image for templating">
+          </a>
+          <div class="card__intro">
+            <h4 class="card__title">Something anything onething much longer text something</h4>
+            <span>109,598,324 have done this</span>
+          </div>
+        </div>
+        <div class="card__footer">
+          <button class="card__btn card__like delta" data-like="something-anything-onething-much-longer-text-something">
+            <svg class="icon-heart" role="presentation">
+              <use href="/images/icons/icons-defs.svg#heart"></use>
+            </svg>
+            Like
+          </button>
+          <button class="card__btn card__add delta" data-addGoal="something-anything-onething-much-longer-text-something">
+            <svg class="icon-pluss" role="presentation">
+              <use href="/images/icons/icons-defs.svg#pluss"></use>
+            </svg>
+            Add Goal
+          </button>
+        </div>
+      </li>
+      <li class="card">
+        <div class="card__thumb">
+          <a href="ideas/one-example-idea.html">
+            <img src="http://fpoimg.com/255x170" alt="Placeholder image for templating">
+          </a>
+          <div class="card__intro">
+            <h4 class="card__title">Short</h4>
+            <span>1 has done this</span>
+          </div>
+        </div>
+        <div class="card__footer">
+          <button class="card__btn card__like delta" data-like="see-the-northern-lights">
+            <svg class="icon-heart" role="presentation">
+              <use href="/images/icons/icons-defs.svg#heart"></use>
+            </svg>
+            Like
+          </button>
+          <button class="card__btn card__add delta" data-addGoal="see-the-northern-lights">
+            <svg class="icon-pluss" role="presentation">
+              <use href="/images/icons/icons-defs.svg#pluss"></use>
+            </svg>
+            Add Goal
+          </button>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="see-more">
+    <button class="btn" type="button" data-more="true">See more</button>
+  </div>
+</main>
