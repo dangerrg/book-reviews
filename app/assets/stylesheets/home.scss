@@ -1,3 +1,1943 @@
-// Place all the styles related to the Home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
+
+
+/**
+ * 1. Change the default font family in all browsers (opinionated).
+ * 2. Correct the line height in all browsers.
+ * 3. Prevent adjustments of font size after orientation changes in
+ *    IE on Windows Phone and in iOS.
+ */
+
+
+/* Document
+   ========================================================================== */
+
+html {
+    font-family: sans-serif;
+    /* 1 */
+    line-height: 1.15;
+    /* 2 */
+    -ms-text-size-adjust: 100%;
+    /* 3 */
+    -webkit-text-size-adjust: 100%;
+    /* 3 */
+}
+
+@import 'sections';
+
+/* Grouping content
+   ========================================================================== */
+
+
+/**
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in IE.
+ */
+
+figcaption,
+figure,
+main {
+    /* 1 */
+    display: block;
+}
+
+
+/**
+ * Add the correct margin in IE 8.
+ */
+
+figure {
+    margin: 1em 40px;
+}
+
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+
+hr {
+    box-sizing: content-box;
+    /* 1 */
+    height: 0;
+    /* 1 */
+    overflow: visible;
+    /* 2 */
+}
+
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+pre {
+    font-family: monospace, monospace;
+    /* 1 */
+    font-size: 1em;
+    /* 2 */
+}
+
+
+/* Text-level semantics
+   ========================================================================== */
+
+
+/**
+ * 1. Remove the gray background on active links in IE 10.
+ * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
+ */
+
+a {
+    background-color: transparent;
+    /* 1 */
+    -webkit-text-decoration-skip: objects;
+    /* 2 */
+}
+
+
+/**
+ * Remove the outline on focused links when they are also active or hovered
+ * in all browsers (opinionated).
+ */
+
+a:active,
+a:hover {
+    outline-width: 0;
+}
+
+
+/**
+ * 1. Remove the bottom border in Firefox 39-.
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+
+abbr[title] {
+    border-bottom: none;
+    /* 1 */
+    text-decoration: underline;
+    /* 2 */
+    text-decoration: underline dotted;
+    /* 2 */
+}
+
+
+/**
+ * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
+ */
+
+b,
+strong {
+    font-weight: inherit;
+}
+
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+
+b,
+strong {
+    font-weight: bolder;
+}
+
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+code,
+kbd,
+samp {
+    font-family: monospace, monospace;
+    /* 1 */
+    font-size: 1em;
+    /* 2 */
+}
+
+
+/**
+ * Add the correct font style in Android 4.3-.
+ */
+
+dfn {
+    font-style: italic;
+}
+
+
+/**
+ * Add the correct background and color in IE 9-.
+ */
+
+mark {
+    background-color: #ff0;
+    color: #000;
+}
+
+
+/**
+ * Add the correct font size in all browsers.
+ */
+
+small {
+    font-size: 80%;
+}
+
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+sup {
+    top: -0.5em;
+}
+
+
+/* Embedded content
+   ========================================================================== */
+
+
+/**
+ * Add the correct display in IE 9-.
+ */
+
+audio,
+video {
+    display: inline-block;
+}
+
+
+/**
+ * Add the correct display in iOS 4-7.
+ */
+
+audio:not([controls]) {
+    display: none;
+    height: 0;
+}
+
+
+/**
+ * Remove the border on images inside links in IE 10-.
+ */
+
+img {
+    border-style: none;
+}
+
+
+/**
+ * Hide the overflow in IE.
+ */
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+
+/* Forms
+   ========================================================================== */
+
+
+/**
+ * 1. Change the font styles in all browsers (opinionated).
+ * 2. Remove the margin in Firefox and Safari.
+ */
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    font-family: sans-serif;
+    /* 1 */
+    font-size: 100%;
+    /* 1 */
+    line-height: 1.15;
+    /* 1 */
+    margin: 0;
+    /* 2 */
+}
+
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+
+button,
+input {
+    /* 1 */
+    overflow: visible;
+}
+
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+
+button,
+select {
+    /* 1 */
+    text-transform: none;
+}
+
+
+/**
+ * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
+ *    controls in Android 4.
+ * 2. Correct the inability to style clickable types in iOS and Safari.
+ */
+
+button,
+html [type="button"],
+
+/* 1 */
+
+[type="reset"],
+[type="submit"] {
+    -webkit-appearance: button;
+    /* 2 */
+}
+
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner,
+button::-moz-focus-inner {
+    border-style: none;
+    padding: 0;
+}
+
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring,
+button:-moz-focusring {
+    outline: 1px dotted ButtonText;
+}
+
+
+/**
+ * Change the border, margin, and padding in all browsers (opinionated).
+ */
+
+fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em;
+}
+
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+
+legend {
+    box-sizing: border-box;
+    /* 1 */
+    color: inherit;
+    /* 2 */
+    display: table;
+    /* 1 */
+    max-width: 100%;
+    /* 1 */
+    padding: 0;
+    /* 3 */
+    white-space: normal;
+    /* 1 */
+}
+
+
+/**
+ * 1. Add the correct display in IE 9-.
+ * 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+
+progress {
+    display: inline-block;
+    /* 1 */
+    vertical-align: baseline;
+    /* 2 */
+}
+
+
+/**
+ * Remove the default vertical scrollbar in IE.
+ */
+
+textarea {
+    overflow: auto;
+}
+
+
+/**
+ * 1. Add the correct box sizing in IE 10-.
+ * 2. Remove the padding in IE 10-.
+ */
+
+[type="checkbox"],
+[type="radio"] {
+    box-sizing: border-box;
+    /* 1 */
+    padding: 0;
+    /* 2 */
+}
+
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+    height: auto;
+}
+
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+
+[type="search"] {
+    -webkit-appearance: textfield;
+    /* 1 */
+    outline-offset: -2px;
+    /* 2 */
+}
+
+
+/**
+ * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
+ */
+
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+
+::-webkit-file-upload-button {
+    -webkit-appearance: button;
+    /* 1 */
+    font: inherit;
+    /* 2 */
+}
+
+
+/* Interactive
+   ========================================================================== */
+
+
+/*
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in Edge, IE, and Firefox.
+ */
+
+details,
+
+/* 1 */
+
+menu {
+    display: block;
+}
+
+
+/*
+ * Add the correct display in all browsers.
+ */
+
+summary {
+    display: list-item;
+}
+
+
+/* Scripting
+   ========================================================================== */
+
+
+/**
+ * Add the correct display in IE 9-.
+ */
+
+canvas {
+    display: inline-block;
+}
+
+
+/**
+ * Add the correct display in IE.
+ */
+
+template {
+    display: none;
+}
+
+
+/* Hidden
+   ========================================================================== */
+
+
+/**
+ * Add the correct display in IE 10-.
+ */
+
+[hidden] {
+    display: none;
+}
+
+
+/**
+ * !! normalize.css ends here !!
+ * Our own CSS begins below.
+ */
+
+
+/* ==========================================================================
+   MAIN
+   ========================================================================== */
+
+
+/**
+ * Base styles; unclassed HTML elements etc.
+ */
+
+html {
+    font-family: 'Rubik', helvetica, arial, sans-serif;
+    font-size: 62.5%;
+    /* Reset to 10px for easier math on em and rem */
+    line-height: 1.6;
+    background: #fff;
+    color: #72797e;
+}
+
+body {
+    font-size: 15px;
+    font-size: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+
+/**
+* Keep margin same as line-height in
+* order to keep vertical rhytm.
+* Remove top-margin to avoid collapsing margin bugs.
+*/
+
+p {
+    margin: 0 0 1.6rem;
+}
+
+a {
+    color: #2c9cf2;
+    text-decoration: none;
+}
+
+a:focus,
+a:hover {
+    text-decoration: underline;
+}
+
+
+/* Stop Safari Mobile from giving input rounded corners */
+
+input,
+textarea {
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+}
+
+
+/* ==========================================================================
+   HELPERS
+   ========================================================================== */
+
+
+/**
+ *  Hide from screen, keep readable for screen readers
+ */
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+
+/**
+ *  Text alignment
+ */
+
+.text--left {
+    text-align: left;
+}
+
+.text--center {
+    text-align: center;
+}
+
+.text--right {
+    text-align: right;
+}
+
+
+/**
+ *  Horisontal ruler
+ */
+
+.hr {
+    border-bottom: 1px solid #e3e5e9;
+}
+
+
+/* ==========================================================================
+   TYPOGRAPHY
+   ========================================================================== */
+
+
+/* Headings
+   ========================================================================== */
+
+
+/**
+ * As per: csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css
+ *
+ * When we define a heading we also define a corresponding class to go with it.
+ * This allows us to apply, say, `class=alpha` to a `h3`; a double-stranded
+ * heading hierarchy.
+ */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    /* Using em for margin keeps it relative to each header's fontsize. */
+    margin: 0 0 0.5em;
+    padding: 0;
+    font-weight: normal;
+}
+
+.alpha,
+h1 {
+    font-size: 48px;
+    font-size: 4.8rem;
+    line-height: 1.2;
+    color: #192127;
+    text-transform: none;
+}
+
+.beta,
+h2 {
+    font-size: 36px;
+    font-size: 3.6rem;
+    line-height: 1.2;
+    color: #192127;
+    text-transform: none;
+}
+
+.gamma,
+h3 {
+    font-size: 28px;
+    font-size: 2.8rem;
+    line-height: 1.2;
+    color: #192127;
+    text-transform: none;
+}
+
+.delta,
+h4,
+th {
+    font-size: 13px;
+    font-size: 1.3rem;
+    line-height: 1.5;
+    color: #72797E;
+    text-transform: uppercase;
+    text-align: left;
+}
+
+.epsilon,
+h5 {
+    font-size: 14px;
+    font-size: 1.4rem;
+    line-height: 1.4;
+    text-transform: none;
+}
+
+.zeta,
+h6 {
+    font-size: 12px;
+    font-size: 1.2rem;
+    line-height: 1.4;
+    text-transform: none;
+}
+
+
+/**
+ * A class for setting massive type; for use in heroes,
+ * promos, etc.
+ */
+
+.giga {
+    font-size: 120px;
+    font-size: 12rem;
+    line-height: 1;
+    color: #192127;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* ==========================================================================
+   COLOURS
+   ========================================================================== */
+
+[data-bgColor="blue"] {
+    background-color: #2c9cf2;
+}
+
+[data-bgColor="black"] {
+    background-color: #192127;
+}
+
+[data-bgColor="darkest"] {
+    background-color: #72797e;
+}
+
+[data-bgColor="dark"] {
+    background-color: #afbac4;
+}
+
+[data-bgColor="gray"] {
+    background-color: #bbc1c6;
+}
+
+[data-bgColor="light"] {
+    background-color: #e3e5e9;
+}
+
+[data-bgColor="lightest"] {
+    background-color: #f7f9fc;
+}
+
+[data-bgColor="red"] {
+    background-color: #e25d43;
+}
+
+
+/* ==========================================================================
+   BUTTONS
+   ========================================================================== */
+
+.btn,
+.card__btn {
+    font-size: 13px;
+    font-size: 1.3rem;
+    text-decoration: none;
+    background-color: #fff;
+    color: #192127;
+    padding: 1.6rem;
+    margin: 0;
+    border: 1px solid #e3e5e9;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.10s ease-in-out;
+    display: flex;
+    align-items: center;
+}
+
+.btn:focus,
+.btn:hover,
+.card__btn:focus,
+.card__btn:hover {
+    text-decoration: none;
+    background-color: #e3e5e9;
+}
+
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+
+.btn::-moz-focus-inner,
+.card__btn::-moz-focus-inner {
+    border-style: none;
+    padding: 0;
+}
+
+.btn--primary {
+    background-color: coral;
+    color: #fff;
+    border: 1px solid coral;
+}
+
+.btn--primary:focus,
+.btn--primary:hover {
+    background-color: #5f1982;
+    border-color: coral;
+}
+
+.btn--warning {
+    background-color: #e25d43;
+    color: #fff;
+    border: 1px solid #e25d43;
+}
+
+.btn--warning:focus,
+.btn--warning:hover {
+    background-color: hsl(10, 93%, 37%);
+    border-color: hsl(10, 93%, 37%);
+}
+
+.btn--inline {
+    border-radius: 0;
+    border-left-width: 0;
+}
+
+.btn-group li {
+    margin-bottom: 1em;
+}
+
+
+/* Show/Hide
+   ========================================================================== */
+
+
+/**
+ *  The toggle is used to activate a javascript
+ */
+
+.toggle {
+    background-color: transparent;
+    border: none;
+    color: #2c9cf2;
+    cursor: pointer;
+    margin: 0 0 1em;
+    padding: 0 0 0 1em;
+    position: relative;
+}
+
+
+/**
+ *  Using pseudo-element to attach additional styling without cluttering the HTML.
+ *  The borders creates the an arrow.
+ */
+
+.toggle::before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #2c9cf2;
+    position: absolute;
+    left: 0;
+    top: 0.5em;
+}
+
+
+/* ==========================================================================
+   FORMS
+   ========================================================================== */
+
+.form--inpage {
+    margin-bottom: 3.2rem;
+}
+
+
+/* Pairs of label + input (+ btn) are wrapped in .input-group */
+
+.input-group__label {
+    display: inline-block;
+    margin: 0 0 0.5em;
+    cursor: pointer;
+}
+
+.input-group__field {
+    padding: 1.6rem;
+    margin: 0 0 1.6rem;
+    font-size: inherit;
+    display: block;
+    width: 100%;
+    /* Don't forget the box-model when combining padding and widths! */
+    box-sizing: border-box;
+}
+
+.input-group__field:not([type="file"]) {
+    background-color: #fff;
+    border: 1px solid #e3e5e9;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.14);
+    transition: all 0.15s cubic-bezier(.44, -0.44, .44, 1.66);
+}
+
+.input-group__field:focus {
+    border-color: #72797e;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.35);
+}
+
+.input-group textarea {
+    height: 100px;
+}
+
+
+/* Align labels to the left of input field when viewport wider than 600px */
+
+@media screen and (min-width: 600px) {
+    .input-group--horizontal {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    .input-group--horizontal .input-group__label,
+    .input-group--horizontal>.field_with_errors {
+        flex: 0 1 20%;
+        margin-top: 1.25rem;
+        /* Value found by testing in the web inspector. Aligns with placeholder text in input field. */
+    }
+    .input-group--horizontal .input-group__field,
+    .input-group--horizontal>.field_with_errors~.field_with_errors {
+        flex: 1 0 auto;
+        width: auto;
+    }
+    .input-group__field {
+        width: 100%;
+    }
+}
+
+
+/* } */
+
+
+/* Input Row "attaches" the button to the end of the input field */
+
+.input-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.input-row__field {
+    flex: 1 0 auto;
+    background-color: #fff;
+    border: 1px solid #e3e5e9;
+    box-shadow: none;
+    padding: 1.6rem;
+    font-size: inherit;
+    display: block;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.input-row__field:focus {
+    border-color: #72797e;
+}
+
+
+/**
+ *  Notes, warnings, alerts
+ */
+
+.alert {
+    color: #e25d43;
+    margin-bottom: 1.6rem;
+}
+
+@media screen and (min-width: 600px) {
+    .alert--wide {
+        margin-left: 20%;
+    }
+}
+
+
+/**
+ *  Promt for cancel or confirm form
+ */
+
+.prompt {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 1.6rem;
+}
+
+.prompt__cancel {
+    flex: 0 1 20%;
+}
+
+.prompt__confirm {
+    flex: 1 0 auto;
+    justify-content: center;
+}
+
+
+/* ==========================================================================
+   LISTS
+   ========================================================================== */
+
+
+/**
+ * The bare-list object which removes the indents
+ * and bullets from a list.
+ */
+
+.bare-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.horizontal-list {
+    list-style-type: none;
+    padding: 0;
+    overflow: hidden;
+    /* To avoid float collapse from list items */
+}
+
+.horizontal-list>li {
+    margin-right: 1em;
+    float: left;
+}
+
+
+/* ==========================================================================
+   GRIDS
+   ========================================================================== */
+
+
+/**
+ * A collection of various ways to create grids
+ * 1) Floats   - support in all browsers
+ * 2) Flexbox  - support across all *modern* browsers
+ * 3) CSS Grid - bleeding edge, and will be supported by all
+ *               modern browsers by the end of 2017.
+ */
+
+
+/* Grid with floats
+   ========================================================================== */
+
+.float-grid {
+    /* Negative margin to equalize the list-item's margin on the outer edges */
+    margin: 0 -1.6rem 6.4rem;
+    /* "Hack" to avoid the collapsing border box of floated item's parent */
+    overflow: hidden;
+}
+
+.float-grid>li {
+    float: left;
+    margin: 0 1.6rem 3.2rem;
+    width: 298px;
+    /* Value that allows for 3 items at full width */
+}
+
+
+/* Grid with Flexbox
+   ========================================================================== */
+
+.flex-grid {
+    /* Negative margin to equalize the list-item's margin on the outer edges */
+    margin: 0 -1.6rem 6.4rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.flex-grid>li {
+    flex: 1 0 auto;
+    margin: 0 1.6rem 3.2rem;
+}
+
+
+/* CSS Grid
+   ========================================================================== */
+
+
+/**
+ * Responsive without needing media queries,
+ * thanks to auto-fill and minmax. Full explanition:
+ * https://www.rachelandrew.co.uk/archives/2016/04/12/flexible-sized-grids-with-auto-fill-and-minmax/
+ */
+
+
+/* Check for CSS grid support */
+
+@supports (display: grid) {
+    .css-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        grid-column-gap: 1.6rem;
+        grid-row-gap: 1.6rem;
+        /* Cancel rules from float layout  */
+        margin: 0 0 6.4rem;
+        overflow: visible;
+    }
+    /* Cancel out rules from float layout  */
+    .float-grid>li {
+        float: none;
+        margin: 0;
+        width: auto;
+    }
+}
+
+
+/* ==========================================================================
+   TABLES
+   ========================================================================== */
+
+
+/**
+ * Remove most spacing between table cells.
+ */
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin: 0 0 1.6em;
+    width: 100%;
+}
+
+.table--lines td {
+    padding: 0.5rem;
+}
+
+.table--lines tr {
+    border-bottom: 1px solid #e3e5e9;
+}
+
+@import "navigation";
+
+/* Ordered navigation
+   ========================================================================== */
+
+
+/*ol*/
+
+.ordered-navigation {
+    color: #2c9cf2;
+    list-style-position: inside;
+    padding: 0;
+}
+
+
+/* Filter tags
+   ========================================================================== */
+
+
+/**
+ *  Save code by adding .pagination to the existing styling
+ */
+
+.pagination,
+.tags-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.pagination li,
+.tags-list li {
+    display: inline-block;
+    /* Include bottom-margin for when they stack on long lists
+      or narrow screens. */
+    margin: 0 0.6rem 0.6rem 0;
+    padding: 0;
+}
+
+.pagination a,
+.tags-list a {
+    background-color: #e3e5e9;
+    color: #72797e;
+    font-size: 1.1rem;
+    padding: 0.3rem 1rem;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.tags-list a.selected {
+    padding: 0.3rem 2.6rem 0.3rem 1rem;
+}
+
+.pagination a:focus,
+.pagination a:hover,
+.tags-list a:focus,
+.tags-list a:hover {
+    color: #fff;
+    background-color: #2c9cf2;
+    text-decoration: none;
+}
+
+.tags-list a.selected:focus,
+.tags-list a.selected:hover {
+    background-color: #e25d43;
+}
+
+.pagination .current {
+    color: #fff;
+    background-color: #72797e;
+    font-size: 1.1rem;
+    padding: 0.3rem 1rem;
+    margin: 0 0.3rem;
+    position: relative;
+    text-transform: uppercase;
+}
+
+
+/* i */
+
+.remove-tag {
+    color: #bbc1c6;
+    display: block;
+    font-style: normal;
+    /* Same vertical padding as parent <a> gives vertical centering */
+    padding: 0.3rem 0;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    text-align: center;
+    /* Make the target bigger, so it's easier to hit */
+    width: 2.4rem;
+}
+
+.tags-list a:hover .remove-tag {
+    color: #fff;
+}
+
+
+/* ==========================================================================
+   LOGO
+   ========================================================================== */
+
+.logo span {
+    font-size: 18px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #192127;
+    display: inline-block;
+    white-space: nowrap;
+    /* Padding makes equal height to Nav size + padding */
+    padding: 1.1rem 0;
+}
+
+.logo i {
+    font-style: normal;
+    color: coral;
+}
+
+
+/**
+* For use on negative background, in footer
+*/
+
+.logo--inverted span {
+    color: #fff;
+}
+
+
+/**
+* For use on image background
+*/
+
+.logo--invertedImg i,
+.logo--invertedImg span {
+    color: #fff;
+}
+
+
+/* ==========================================================================
+   LAYOUT
+   ========================================================================== */
+
+
+/* Center page contents
+    ========================================================================== */
+
+.content-wrapper {
+    margin: 0 auto;
+    max-width: 64em;
+    padding: 0 1em;
+}
+
+.see-more {
+    border-top: 1px solid #e3e5e9;
+    padding: 1.6rem 0;
+    margin: 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+
+/* "Lighbox" module
+   ========================================================================== */
+
+.envelope {
+    min-width: 10em;
+    max-width: 35em;
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.14);
+    margin: 0 auto 6.4rem;
+}
+
+.envelope>header {
+    padding: 3.2rem;
+    border-bottom: 1px solid #e3e5e9;
+}
+
+.envelope>header p:last-child {
+    margin-bottom: 0;
+}
+
+.envelope>main {
+    padding: 3.2rem;
+}
+
+
+/* Filter tags' box
+   ========================================================================== */
+
+.filter {
+    background-color: #f7f9fc;
+    border-top: 1px solid #e3e5e9;
+    border-bottom: 1px solid #e3e5e9;
+    padding: 0.6rem 0 0;
+    margin: 0 0 3.2rem;
+}
+
+
+/* Media queries
+   ========================================================================== */
+
+
+/**
+ * These breakpoints are selected by checking resizing the browser
+ * window to see where the layout "breaks", ie. starts lucking
+ * ugly. This will vary from project to project.
+ * There is no need to stick to the rigid 480px - 760px - 1280px
+ * breakpoints like many frameworks encourage if your design doesn't
+ * need it.
+ */
+
+
+/* If narrow screen then remove padding */
+
+@media screen and (max-width: 539px) {
+    .masthead {
+        padding: 0;
+    }
+}
+
+
+/* If screen medium width - over 540px wide */
+
+@media screen and (min-width: 540px) {
+    .masthead h1 {
+        font-size: 40px;
+        font-size: 4rem;
+        text-align: center;
+    }
+    .masthead .input-inline {
+        max-width: 80%;
+        margin: 0 auto;
+    }
+}
+
+
+/* If wide screen- over 720px wide */
+
+@media screen and (min-width: 720px) {
+    .masthead h1 {
+        font-size: 48px;
+        font-size: 4.8rem;
+    }
+    .masthead .input-inline {
+        max-width: 60%;
+    }
+}
+
+
+/* Full page background image
+   ========================================================================== */
+
+.full-bleed {
+    background: #72797e url("../images/mountains-forests.jpg") no-repeat center center fixed;
+    background-size: cover;
+}
+
+.full-bleed__header {
+    padding: 3.2rem 0 6.4rem;
+}
+
+@import 'header';
+
+/* Masthead
+   ========================================================================== */
+
+.masthead {
+    background: #afbac4 url("https://wallpaperhd.wiki/wp-content/uploads/hd-backgrounds-for-banner-wallpaper.wiki-cool-backgrounds-hd-1080p-wallpaper-pic-wpe0014677.jpg") no-repeat 50% 50% / cover;
+    border-bottom: 1px solid #e3e5e9;
+    padding: 1.6rem 0;
+    margin: 0 0 6.4rem;
+    opacity: 0.8;
+}
+
+.masthead .input-group__label,
+.masthead h1 {
+    color: #fff;
+}
+
+
+/* Media queries
+   ========================================================================== */
+
+
+/**
+ * These breakpoints are selected by checking resizing the browser
+ * window to see where the layout "breaks", ie. starts lucking
+ * ugly. This will vary from project to project.
+ * There is no need to stick to the rigid 480px - 760px - 1280px
+ * breakpoints like many frameworks encourage if your design doesn't
+ * need it.
+ */
+
+
+/* If screen medium width - over 540px wide */
+
+@media screen and (min-width: 540px) {
+    .masthead {
+        padding: 6.4rem 0;
+    }
+    .masthead h1 {
+        font-size: 40px;
+        font-size: 4rem;
+        text-align: center;
+    }
+    .masthead .input-inline {
+        max-width: 80%;
+        margin: 0 auto;
+    }
+}
+
+
+/* If wide screen- over 720px wide */
+
+@media screen and (min-width: 720px) {
+    .masthead {
+        padding: 12.8rem 0 16rem;
+    }
+    .masthead h1 {
+        font-size: 48px;
+        font-size: 4.8rem;
+    }
+    .masthead .input-inline {
+        max-width: 60%;
+    }
+}
+
+
+/* Homepage banner
+   ========================================================================== */
+
+.banner {
+    /* Use short-hand for the background properties */
+    background: #afbac4 url("../images/mountain-lake.jpg") no-repeat 50% 0 / auto 787px;
+    padding: 0;
+    margin: 0;
+}
+
+
+/* Adjust background image sizing when screen is wider than image */
+
+@media screen and (min-width: 1920px) {
+    .banner {
+        background-size: 100% 787px;
+    }
+}
+
+
+/**
+ * Following is a section of styles over-ruling the existing styles when
+ * within the .banner parent element.
+ */
+
+
+/* Change font color on elements within .banner */
+
+.banner .logo i,
+.banner .logo span,
+.banner .main-navigation a {
+    color: #fff;
+}
+
+.banner .site-header {
+    /* Change border color from default .site-header */
+    border-color: #afbac4;
+    /* Remove margin when in banner */
+    margin: 0;
+}
+
+@import "footer";
+
+/* ==========================================================================
+   PAGE HEADER
+   ========================================================================== */
+
+.page-header {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 0 3.5rem;
+}
+
+.page-header h1 {
+    margin: 0;
+    flex: 1 0 auto;
+}
+
+
+/* ==========================================================================
+   IDEA CARD
+   ========================================================================== */
+
+.card {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.14);
+    border-radius: 3px;
+    margin: 0;
+    transition: all 0.1s ease-in-out;
+}
+
+.card:hover {
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.35);
+}
+
+.card__thumb {
+    /* Set the context for .card__intro */
+    position: relative;
+    display: block;
+}
+
+
+/*
+  This is a hack for a bug in Selenium / GeckoDriver
+  See https://github.com/mozilla/geckodriver/issues/653
+*/
+
+.card__thumb a {
+    display: block;
+}
+
+.card__thumb img {
+    /*
+    You're seeing the space for descenders
+    (the bits that hang off the bottom of 'y' and 'p')
+    because img is an inline element by default.
+    Display: block removes the gap.
+  */
+    display: block;
+    /* Make the image responsive */
+    width: 100%;
+    /* Set border radius here as well, because it won't inherit from .card */
+    border-radius: 3px 3px 0 0;
+}
+
+.card__owner {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: block;
+    padding: 2px 8px;
+    color: #fff;
+    background: #2c9cf2;
+    text-transform: uppercase;
+    border-radius: 2px;
+}
+
+.card__intro {
+    /* Layer text on top of image */
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    color: #e3e5e9;
+    padding: 1.6rem;
+}
+
+.card__intro:hover {
+    /* Layer text background */
+    background-color: #292020;
+    opacity: 0.8;
+    width: 100%;
+}
+
+.card__title {
+    color: #fff;
+    font-size: 20px;
+    font-size: 2rem;
+    text-transform: none;
+    margin: 0;
+    padding: 0;
+}
+
+.card__footer {
+    display: flex;
+    flex-direction: row;
+}
+
+.card__footer--text {
+    text-transform: uppercase;
+    background-color: #fff;
+    color: #afbac4;
+    padding: 1.6rem;
+    display: flex;
+    align-items: center;
+}
+
+.card__footer--text>svg {
+    margin-right: 0.75em;
+}
+
+.card__footer--text>p {
+    margin: 0;
+}
+
+.card .btn,
+.card .card__btn {
+    border: none;
+    border-radius: 0;
+    text-transform: uppercase;
+    flex: 1 0 auto;
+    /* The background color is already set in .card__btn */
+    display: flex;
+    align-items: center;
+}
+
+.card .btn:active,
+.card .btn:focus,
+.card .btn:hover,
+.card .card__btn:active,
+.card .card__btn:focus,
+.card .card__btn:hover {
+    color: #2c9cf2;
+}
+
+.card .btn:first-child,
+.card .card__btn:first-child {
+    /* Setting border here overrules the border: none in .card__btn above,
+      because this comes later in the code .*/
+    border-right: 1px solid #bbc1c6;
+}
+
+.delta {
+    font-size: 13px;
+    font-size: 1.3rem;
+    line-height: 1.5;
+    color: #72797E;
+    text-transform: uppercase;
+    text-align: left;
+}
+
+.card__add {
+    border-radius: 0 0 3px 0;
+    display: flex;
+    align-items: center;
+}
+
+
+/* ==========================================================================
+   ICONS
+   ========================================================================== */
+
+.icon-check,
+.icon-delete,
+.icon-edit,
+.icon-heart,
+.icon-pluss {
+    fill: #72797E;
+    width: 24px;
+    height: 24px;
+    margin-right: 5px;
+    margin-top: -3px;
+}
+
+.card__btn:focus .icon-edit,
+.card__btn:focus .icon-heart,
+.card__btn:focus .icon-pluss,
+.card__btn:hover .icon-edit,
+.card__btn:hover .icon-heart,
+.card__btn:hover .icon-pluss {
+    fill: #2c9cf2;
+}
+
+.icon-heart--liked {
+    fill: #e25d43;
+}
+
+.icon-check--active {
+    fill: #2c9cf2;
+}
+
+.icon--sm {
+    width: 16px;
+    height: 16px;
+    margin-bottom: -2px;
+}
+
+
+/* ==========================================================================
+   MEDIA OBJECT
+   ========================================================================== */
+
+.media {
+    padding-bottom: 3.2rem;
+}
+
+.media__figure {
+    margin-bottom: 1.6rem;
+}
+
+.media__figure img {
+    width: 100%;
+}
+
+@media screen and (min-width: 720px) {
+    .media__figure {
+        box-sizing: border-box;
+        float: left;
+        width: 50%;
+        padding-right: 1.6rem;
+    }
+    .media__body {
+        width: 50%;
+        float: left;
+    }
+    /* Clearfix hack because both children are floats */
+    .media::after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+}
+
+
+/* ==========================================================================
+   GOAL
+   ========================================================================== */
+
+.goal__owner p {
+    margin: 0;
+}
+
+.avatar {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+.goal__owner .avatar {
+    float: left;
+    width: 20px;
+    height: 20px;
+    margin-right: 0.5em;
+}
+
+.goal__meta {
+    font-size: 12px;
+    font-size: 1.2rem;
+    color: #bbc1c6;
+    margin-bottom: 1.6rem;
+}
+
+.goal__meta span:not(:last-child)::after {
+    content: '|';
+    padding: 0 0.5em;
+}
+
+
+/* ==========================================================================
+   COMMENTS
+   ========================================================================== */
+
+.comments {
+    padding: 3.2rem 0;
+}
+
+
+/* Comments input field
+   ========================================================================== */
+
+.comments__input {
+    margin-bottom: 3.2rem;
+}
+
+.comments__title span {
+    vertical-align: super;
+    font-size: 16 px;
+    font-size: 1.6rem;
+    font-weight: normal;
+    color: #bbc1c6;
+}
+
+.comments__input::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.comments__input .avatar {
+    float: left;
+    margin-top: 2em;
+}
+
+.comments__input .input-group {
+    margin-left: 60px;
+}
+
+.comments__input .btn {
+    float: right;
+}
+
+
+/* Comments listing
+   ========================================================================== */
+
+.comments__listing {
+    list-style: none;
+    margin: 0 0 3.2rem;
+    padding: 0;
+}
+
+.comment {
+    margin-bottom: 3.2rem;
+}
+
+.comment .avatar {
+    float: left;
+}
+
+.comment__body {
+    margin-left: 60px;
+}
+
+.comment__title {
+    font-size: 1.6rem;
+    font-size: 16px;
+    color: #192127;
+}
+
+.comment__title time {
+    color: #bbc1c6;
+}
+
+
+/* ==========================================================================
+   Style guide specific styles / helpers
+   ========================================================================== */
+
+.sg {
+    padding: 3.2rem;
+}
+
+.sg-header,
+.sg-section {
+    margin: 0 0 6.4rem;
+}
+
+.sg-section>div {
+    margin-bottom: 3.2rem;
+}
+
+.sg-inlineblock {
+    display: inline-block;
+    margin: 0 1.6rem 1.6rem 0;
+}
+
+.sg-weights {
+    color: #192127;
+}
+
+.sg-header-button {
+    font-size: 13px;
+    font-size: 1.3rem;
+    line-height: 1;
+    text-transform: uppercase;
+    color: #192127;
+}
+
+.sg-typotable tr {
+    line-height: 5.76rem;
+    /* = .alpha font-size * line-height */
+}
+
+
+/**
+ * A NOTE ON FLEXBOX AND PROGRESSIVE ENHANCEMENT
+ *
+ * By default the list with colours will display
+ * in a vertical list with each item spanning the full width.
+ * Browsers with Flexbox support will display a grid layout.
+ * The content itself will be the same, in the same order, both
+ * with and without Flexbox.
+ */
+
+
+/*ul*/
+
+.sg-palette {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    list-style-type: none;
+    padding: 0;
+}
+
+.sg-palette li {
+    flex-basis: 14%;
+    margin: 0 1.6em 0 0;
+}
+
+
+/* Attribute selectors are supported in IE7 and up */
+
+.sg-palette [data-bgColor] {
+    height: 4em;
+}
+
+.sg-dark-bg {
+    background-color: #192127;
+}

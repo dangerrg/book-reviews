@@ -1,0 +1,39 @@
+/* ==========================================================================
+   GLOBAL HEADER
+   ========================================================================== */
+
+.site-header {
+    border-bottom: 1px solid #e3e5e9;
+    margin: 0 0 6.4rem;
+}
+
+.site-header .content-wrapper {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.site-header .logo {
+    /* Margin equals Search margin + Nav padding */
+    margin: 0 1.55rem 0 0;
+}
+
+.site-header .global-search {
+    flex: 1 0 auto;
+    margin: 0 0.8rem -1px 0;
+}
+
+.site-header .input-row__field {
+    border-color: coral;
+}
+
+.site-header .input-row__field:focus {
+    border-color: #5f1982;
+}
+
+
+/* Avoid line-break of navigation */
+
+.site-header__nav {
+    flex-shrink: 0;
+}
