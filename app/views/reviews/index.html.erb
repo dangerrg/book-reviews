@@ -1,0 +1,21 @@
+<main>
+  <div class="content-wrapper">
+    <h1>Results for "<%= @search_term %>"</h1>
+  </div>
+  <div class="content-wrapper">
+    <% if(@reviews.any?) %> <%# conditional to display 'No reviews found' text %>
+      <ul class="bare-list float-grid css-grid">
+        <% @reviews.each do |review| %> <%# Iterate Idea instances in reviews index %>
+          <li>
+            <%= render(partial: 'review_card', locals: { card_title: review.book_title, author: review.author, body: review.body, image_url: review.image_url, review: review }) %>
+          </li>
+        <% end %>
+      </ul>
+      <div class="see-more">
+        <%= button_tag('See more', class: 'btn') %>
+      </div>
+    <% else %>
+      <h3>No reviews found!</h3>
+    <% end %>
+  </div>
+</main>
