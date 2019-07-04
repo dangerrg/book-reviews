@@ -30,15 +30,7 @@
               </li>
             </ul>
           </nav>
-          <%= form_tag(reviews_index_path, method: :get, class: 'global-search') do %>
-            <div class="input-inline">
-              <label class="input-group__label sr-only" for="q">Looking for good books?</label>
-              <div class="input-row">
-                <%= text_field_tag('q', nil, class: 'input-row__field', placeholder: 'e.g. Fifty Shades of Grey') %>
-                <%= button_tag('Search', class: 'btn btn--inline btn--primary') %>
-              </div>
-            </div>
-          <% end %>
+          <%= render(partial: 'search_form') %>
           <nav class="siteHeader__personal">
             <ul class="main-navigation">
               <li class="nav-item">
