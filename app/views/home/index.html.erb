@@ -16,84 +16,16 @@
   <div class="content-wrapper">
     <h2>Some reviews</h2>
     <ul class="bare-list float-grid css-grid">
-      <li class="card">
-          <div class="card__thumb">
-            <a href="reviews/northern-lights.html">
-              <img src="https://a.wattpad.com/cover/102961866-288-k750646.jpg" alt="The Brothers Three: Book Cover One">
-            </a>
-            <div class="card__intro">
-              <h4 class="card__title">The Brothers Three: Book One of The Blackwood Saga</h4>
-              <span>by Layton Green</span>
-              <p>Have you ever wondered what it would be like to be plunged into a dangerous fantasy world?</p>
-            </div>
-          </div>
-          <div class="card__footer">
-            <button class="card__btn card__like delta" data-like="the-brothers-three-cover-book">
-              <svg class="icon-heart" role="presentation">
-                <use xlink:href="<%= asset_url("icons/icons-defs.svg" + "#heart") %>"></use>
-              </svg>
-              Like
-            </button>
-            <button class="card__btn card__add delta" data-addBook="the-brothers-three-cover-book">
-              <svg class="icon-pluss" role="presentation">
-                <use xlink:href="<%= asset_url("icons/icons-defs.svg" + "#pluss") %>"></use>
-              </svg>
-              Add Book
-            </button>
-          </div>
-      </li>
-      <li class="card">
-        <div class="card__thumb">
-          <a href="reviews/one-example-review.html">
-            <img src="https://images-na.ssl-images-amazon.com/images/I/51tnVg9xsCL.jpg" alt="The Spirit Mage book Cover">
-          </a>
-          <div class="card__intro">
-            <h4 class="card__title">The Spirit Mage (The Blackwood Saga Book 2)</h4>
-            <span>by Layton Green</span>
-            <p>Valjean thought about how impossible it seemed that there was another world out there from which he had narrowly escaped. A world of manticores and cave fiends, magic swords and potions, spirit mages and...</p>
-          </div>
-        </div>
-        <div class="card__footer">
-          <button class="card__btn card__like delta" data-like="the-spirit-mage-(the-blackwood-saga-book-2)">
-            <svg class="icon-heart" role="presentation">
-              <use xlink:href="<%= asset_url("icons/icons-defs.svg" + "#heart") %>"></use>
-            </svg>
-            Like
-          </button>
-          <button class="card__btn card__add delta" data-addBook="the-spirit-mage-(the-blackwood-saga-book-2)">
-            <svg class="icon-pluss" role="presentation">
-              <use xlink:href="<%= asset_url("icons/icons-defs.svg" + "#pluss") %>"></use>
-            </svg>
-            Add Book
-          </button>
-        </div>
-      </li>
-      <li class="card">
-        <div class="card__thumb">
-          <a href="reviews/one-example-review.html">
-            <img src="https://images-na.ssl-images-amazon.com/images/I/51Y4lfspuGL.jpg" alt="The Last Cleric book cover">
-          </a>
-          <div class="card__intro">
-            <h4 class="card__title">The Last Cleric (The Blackwood Saga Book 3)</h4>
-            <span>by Layton Green</span>
-            <p>"An extraordinary new series" - Book Reader's Heaven</p>
-          </div>
-        </div>
-        <div class="card__footer">
-          <button class="card__btn card__like delta" data-like="the-last-cleric">
-            <svg class="icon-heart" role="presentation">
-              <use xlink:href="<%= asset_url("icons/icons-defs.svg" + "#heart") %>"></use>
-            </svg>
-            Like
-          </button>
-          <button class="card__btn card__add delta" data-addBook="the-last-cleric">
-            <svg class="icon-pluss" role="presentation">
-              <use xlink:href="<%= asset_url("icons/icons-defs.svg" + "#pluss") %>"></use>
-            </svg>
-            Add Book
-          </button>
-        </div>
-      </li>
+      <% @reviews.each do |review| %>
+        <li>
+          <%= render(partial: 'review_card',
+                    locals: { card_title: review.book_title,
+                              author: review.author,
+                              body: review.body,
+                              image_url: review.image_url,
+                              review: review }) %>
+        </li>
+      <% end %>
     </ul>
 
   <div class="see-more">
