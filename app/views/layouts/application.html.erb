@@ -15,12 +15,12 @@
       <div class="site-header">
         <div class="content-wrapper">
           <div class="logo">
-            <a href="/"><span>Bo<i>okRev</i>iews</span></a>
+            <%= link_to('<span>Bo<i>okRev</i>iews</span>'.html_safe, root_path) %>
           </div>
           <nav class="siteHeader__primaryNavInline">
             <ul class="main-navigation">
               <li class="nav-item active">
-                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                <%= link_to('Home <span class="sr-only">(current)</span>'.html_safe, root_path) %>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="/about.html">About</a>
@@ -30,15 +30,15 @@
               </li>
             </ul>
           </nav>
-          <form class="global-search" method="get" action="" role="search">
+          <%= form_tag(reviews_index_path, method: :get, class: 'global-search') do %>
             <div class="input-inline">
-              <label class="input-group__label sr-only" for="global-search-input">Looking for inspiration?</label>
+              <label class="input-group__label sr-only" for="q">Looking for good books?</label>
               <div class="input-row">
-                <input id="global-search-input" class="input-row__field" type="text" name="search" placeholder="e.g. Fifty Shades of Grey">
-                <button class="btn btn--inline btn--primary" type="submit">Search</button>
+                <%= text_field_tag('q', nil, class: 'input-row__field', placeholder: 'e.g. Fifty Shades of Grey') %>
+                <%= button_tag('Search', class: 'btn btn--inline btn--primary') %>
               </div>
             </div>
-          </form>
+          <% end %>
           <nav class="siteHeader__personal">
             <ul class="main-navigation">
               <li class="nav-item">
@@ -49,11 +49,11 @@
                   Menu
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="/">Home</a>
+                  <%= link_to('Home', root_path) %>
                   <a class="dropdown-item" href="/about.html">About</a>
                   <a class="dropdown-item" href="#">My reviews</a>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="/users/new">Log In</a>
+                  <%= link_to('Log In', new_user_path) %>
                 </div>
               </li>
             </ul>
@@ -67,7 +67,7 @@
     <footer class="site-footer">
       <div class="content-wrapper">
         <div class="logo logo--inverted footer__logo">
-          <a href="/"><span>Bo<i>okRev</i>iews</span></a>
+          <%= link_to('<span>Bo<i>okRev</i>iews</span>'.html_safe, root_path) %>
         </div>
         <nav class="footer__navigation">
           <ul>

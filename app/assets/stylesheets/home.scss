@@ -1617,6 +1617,7 @@ table {
 .card__footer {
     display: flex;
     flex-direction: row;
+    width: -moz-available;
 }
 
 .card__footer--text {
