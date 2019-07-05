@@ -3,7 +3,7 @@
     <a href="reviews/one-example-review.html">
       <% if(image_url.nil?) %>
         <%# use conditional to avoid error when the existing images have no values %>
-          <img src="http://fpoimg.com/255x170" alt="The Brothers Three: Book Cover One">
+          <img src="http://fpoimg.com/255x170" alt="Image 255x170 by default">
         <% else %>
           <%= image_tag(image_url) %>
         <% end %>
