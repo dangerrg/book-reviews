@@ -1,32 +1,27 @@
 <div class="card">
   <div class="card__thumb">
     <a href="reviews/one-example-review.html">
-      <% if(image_url.nil?) %>
-        <%# use conditional to avoid error when the existing images have no values %>
-          <img src="http://fpoimg.com/255x170" alt="Image 255x170 by default">
-        <% else %>
-          <%= image_tag(image_url) %>
-        <% end %>
-      </a>
-      <div class="card__intro">
-        <h4 class="card__title"><%= card_title %></h4>
-        <span>by <%= author %></span>
-        <p><%= body %></p>
-      </div>
+      <%= render(partial: 'review_photo', locals: { image_url: image_url }) %>
+    </a>
+    <div class="card__intro">
+      <h4 class="card__title"><%= card_title %></h4>
+      <span>by <%= author %></span>
+      <p><%= body %></p>
     </div>
+  </div>
+  <div class="card__footer">
     <div class="card__footer">
-      <div class="card__footer">
-        <button class="card__btn card__like delta" data-like="the-brothers-three-cover-book">
-          <svg class="icon-heart" role="presentation">
-            <use xlink:href="<%= asset_url("icons/icons-defs.svg" + "#heart") %>"></use>
-          </svg>
-          Like
-        </button>
-        <button class="card__btn card__add delta" data-addBook="the-brothers-three-cover-book">
-          <svg class="icon-pluss" role="presentation">
-            <use xlink:href="<%= asset_url("icons/icons-defs.svg" + "#pluss") %>"></use>
-          </svg>
-          Add Book
-        </button>
-      </div>
+      <button class="card__btn card__like delta" data-like="the-brothers-three-cover-book">
+        <svg class="icon-heart" role="presentation">
+          <use xlink:href="<%= asset_url("icons/icons-defs.svg" + "#heart") %>"></use>
+        </svg>
+        Like
+      </button>
+      <button class="card__btn card__add delta" data-addBook="the-brothers-three-cover-book">
+        <svg class="icon-pluss" role="presentation">
+          <use xlink:href="<%= asset_url("icons/icons-defs.svg" + "#pluss") %>"></use>
+        </svg>
+        Add Book
+      </button>
+    </div>
   </div>

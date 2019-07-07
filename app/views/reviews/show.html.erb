@@ -2,7 +2,7 @@
   <div class="content-wrapper hr">
     <div class="media">
       <div class="media__figure">
-        <img src="images/aurora.jpg" alt="Aurora in search of the northern lights"/>
+        <%= render(partial: 'review_photo', locals: { image_url: @review.image_url }) %>
       </div>
       <div class="media__body">
         <div class="goal">
@@ -12,7 +12,7 @@
               <a href="#">Frederick Rose</a>
             </p>
           </div>
-          <h1 class="gamma">Aurora in search of the northern lights</h1>
+          <h1 class="gamma"><%= @review.book_title %></h1>
           <ul class="horizontal-list btn-group">
             <li>
               <a class="btn delta" href="#no-link">
@@ -38,9 +38,9 @@
           </div>
           <div class="goal__meta">
             <span>Created on
-              <time datetime="2017-08-27T03:48">27/08/2017</time>
+              <time datetime="2017-08-27T03:48"><%= @review.created_at.strftime("%d %b '%y") %></time>
             </span>
-            <span>by Windridge Melanie</span>
+            <span>by <%= @review.author %> </span>
             <span>
               <a href="#comments">3 comments</a>
             </span>
@@ -72,7 +72,7 @@
         <span>3 comments</span></h2>
 
       <form class="comments__input" action="goal.html" method="post">
-        <img class="avatar" src="#images/avatar.png" alt="Portrait of logged in user">
+        <%= image_tag('avatar', alt: 'Default avatar') %>
         <div class="input-group">
           <label class="input-group__label" for="comment">Add a comment</label>
           <textarea id="comment" class="input-group__field"></textarea>
@@ -82,7 +82,7 @@
 
       <ul class="comments__listing">
         <li class="comment">
-          <img class="avatar" src="#images/avatar.png" alt="Portrait of commenter">
+          <%= image_tag('avatar', alt: 'Default avatar') %>
           <div class="comment__body">
             <h3 class="comment__title">Tom Jenkinson
               <time datetime="2017-08-28T13:48">Today</time>
@@ -91,7 +91,7 @@
           </div>
         </li>
         <li class="comment">
-          <img class="avatar" src="#images/avatar.png" alt="Portrait of commenter">
+          <%= image_tag('avatar', alt: 'Default avatar') %>
           <div class="comment__body">
             <h3 class="comment__title">Emily Walker
               <time datetime="2017-08-27T03:48">Yesterday</time>
@@ -100,7 +100,7 @@
           </div>
         </li>
         <li class="comment">
-          <img class="avatar" src="#images/avatar.png" alt="Portrait of commenter">
+          <%= image_tag('avatar', alt: 'Default avatar') %>
           <div class="comment__body">
             <h3 class="comment__title">Claire Prince
               <time datetime="2016-06-10T09:48">10. June 2016</time>
