@@ -1,2 +1,45 @@
-<h1>Account#reviews</h1>
-<p>Find me in app/views/account/reviews.html.erb</p>
+<main>
+  <div class="content-wrapper">
+    <div class="page-header">
+      <h1>My Reviews</h1>
+      <%= link_to('Create Review', reviews_new_path, class: 'btn') %>
+    </div>
+  </div>
+  <div class="content-wrapper">
+    <ul class="bare-list float-grid css-grid">
+      <% @reviews.each do |review| %>
+        <li>
+          <div class="card">
+            <div class="card__thumb">
+              <a href="reviews/northern-lights-ghost.html">
+                <img src="http://fpoimg.com/255x170" alt="Northern lights ghost over a lake in the forest">
+              </a>
+              <div class="card__intro">
+                <h4 class="card__title"><%= review.book_title %></h4>
+                <span>by <%= review.author %></span>
+                <p><%= review.body %></p>
+              </div>
+            </div>
+            <div class="card__footer">
+              <button class="btn delta" type="submit">
+                <svg class="icon-delete" role="presentation">
+                  <use xlink:href="<%= asset_url("icons/icons-defs.svg" + "#delete") %>"></use>
+                </svg>
+                Delete
+              </button>
+              <a class="btn delta" href="#no-link">
+                <svg class="icon-edit" role="presentation">
+                  <use xlink:href="<%= asset_url("icons/icons-defs.svg" + "#edit") %>"></use>
+                </svg>
+                Edit
+              </a>
+            </div>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="see-more">
+    <button class="btn" type="button" data-more="true">See more</button>
+  </div>
+</main>
