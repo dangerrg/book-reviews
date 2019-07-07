@@ -9,32 +9,7 @@
     <ul class="bare-list float-grid css-grid">
       <% @reviews.each do |review| %>
         <li>
-          <div class="card">
-            <div class="card__thumb">
-              <a href="reviews/northern-lights-ghost.html">
-                <img src="http://fpoimg.com/255x170" alt="Northern lights ghost over a lake in the forest">
-              </a>
-              <div class="card__intro">
-                <h4 class="card__title"><%= review.book_title %></h4>
-                <span>by <%= review.author %></span>
-                <p><%= review.body %></p>
-              </div>
-            </div>
-            <div class="card__footer">
-              <button class="btn delta" type="submit">
-                <svg class="icon-delete" role="presentation">
-                  <use xlink:href="<%= asset_url("icons/icons-defs.svg" + "#delete") %>"></use>
-                </svg>
-                Delete
-              </button>
-              <a class="btn delta" href="#no-link">
-                <svg class="icon-edit" role="presentation">
-                  <use xlink:href="<%= asset_url("icons/icons-defs.svg" + "#edit") %>"></use>
-                </svg>
-                Edit
-              </a>
-            </div>
-          </div>
+          <%= render(partial: 'editable_review_card', locals: { book_title: review.book_title, body: review.body, author: review.author }) %>
         </li>
       <% end %>
     </ul>
