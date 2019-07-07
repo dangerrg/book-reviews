@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
   post '/reviews/create'
 
+  get '/reviews/:id/show', to: 'reviews#show', as: 'show_review'
+
   get 'account/reviews'
 
   resources :users

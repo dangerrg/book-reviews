@@ -5,6 +5,10 @@ class ReviewsController < ApplicationController
     @reviews = Review.search(@search_term)
   end
 
+  def show
+    @review = Review.find(params[:id])
+  end
+
   def new
     @review = Review.new
   end
