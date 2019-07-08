@@ -15,17 +15,17 @@
           <h1 class="gamma"><%= @review.book_title %></h1>
           <ul class="horizontal-list btn-group">
             <li>
-              <a class="btn delta" href="#no-link">
+              <a class="btn delta" href="<%= edit_review_path(@review) %>">
                 <svg class="icon-check icon--sm" role="presentation">
-                  <!-- <use xlink:href="images/icons-defs.svg#check"></use> -->
+                  <use xlink:href="<%= asset_url("icons/icons-defs.svg" + "#edit") %>"></use>
                 </svg>
-                Edit
+              Edit
               </a>
             </li>
             <li>
               <button class="btn delta" type="button">
                 <svg class="icon-heart icon--sm" role="presentation">
-                  <!-- <use xlink:href="images/icons-defs.svg#heart"></use> -->
+                  <use xlink:href="<%= asset_url("icons/icons-defs.svg" + "#pluss") %>"></use>
                 </svg>
                 Add
               </button>

@@ -1,14 +1,14 @@
 <div class="card">
   <div class="card__thumb">
     <%= link_to(show_review_path(review)) do %>
-    <%= render(partial: 'review_photo', locals: { image_url: image_url }) %>
-    <div class="card__intro">
-      <h4 class="card__title"><%= card_title %></h4>
-      <span>by
-        <%= author %></span>
-      <p><%= body %></p>
-    </div>
-  <% end %>
+      <%= render(partial: 'review_photo', locals: { image_url: image_url }) %>
+      <div class="card__intro">
+        <h4 class="card__title"><%= card_title %></h4>
+        <span>by
+          <%= author %></span>
+        <p><%= body %></p>
+      </div>
+    <% end %>
   </div>
   <div class="card__footer">
     <button class="card__btn card__like delta" data-like="the-brothers-three-cover-book">
