@@ -14,13 +14,8 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    review = Review.new
-    review.book_title = params[:book_title]
-    review.body = params[:body]
-    review.image_url = params[:image_url]
-    review.author = params[:author]
+    review = Review.new(reviews_params)
     review.save!
-
     redirect_to reviews_index_path
   end
 
@@ -30,11 +25,13 @@ class ReviewsController < ApplicationController
 
   def update
     review = Review.find(params[:id])
-    review.book_title = params[:book_title]
-    review.body = params[:body]
-    review.image_url = params[:image_url]
-    review.author = params[:author]
-    review.save!
+    review.update(reviews_params)
     redirect_to account_reviews_path
+  end
+
+  private
+
+  def reviews_params
+    params.permit(:book_title, :body, :image_url, :author)
   end
 end
