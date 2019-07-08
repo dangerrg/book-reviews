@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
   get '/reviews/:id/show', to: 'reviews#show', as: 'show_review'
 
+  get '/reviews/:id/edit', to: 'reviews#edit', as: 'edit_review'
+
   get 'account/reviews'
 
   resources :users

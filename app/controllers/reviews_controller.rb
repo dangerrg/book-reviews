@@ -23,4 +23,7 @@ class ReviewsController < ApplicationController
 
     redirect_to reviews_index_path
   end
+
+  def edit
+  end
 end
