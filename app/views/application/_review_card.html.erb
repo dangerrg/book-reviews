@@ -1,27 +1,26 @@
 <div class="card">
   <div class="card__thumb">
     <%= link_to(show_review_path(review)) do %>
-      <%= render(partial: 'review_photo', locals: { image_url: image_url }) %>
-    <% end %>
+    <%= render(partial: 'review_photo', locals: { image_url: image_url }) %>
     <div class="card__intro">
       <h4 class="card__title"><%= card_title %></h4>
-      <span>by <%= author %></span>
+      <span>by
+        <%= author %></span>
       <p><%= body %></p>
     </div>
+  <% end %>
   </div>
   <div class="card__footer">
-    <div class="card__footer">
-      <button class="card__btn card__like delta" data-like="the-brothers-three-cover-book">
-        <svg class="icon-heart" role="presentation">
-          <use xlink:href="<%= asset_url("icons/icons-defs.svg" + "#heart") %>"></use>
-        </svg>
-        Like
-      </button>
-      <button class="card__btn card__add delta" data-addBook="the-brothers-three-cover-book">
-        <svg class="icon-pluss" role="presentation">
-          <use xlink:href="<%= asset_url("icons/icons-defs.svg" + "#pluss") %>"></use>
-        </svg>
-        Add Book
-      </button>
-    </div>
+    <button class="card__btn card__like delta" data-like="the-brothers-three-cover-book">
+      <svg class="icon-heart" role="presentation">
+        <use xlink:href="<%= asset_url("icons/icons-defs.svg" + "#heart") %>"></use>
+      </svg>
+      Like
+    </button>
+    <button class="card__btn card__add delta" data-addbook="the-brothers-three-cover-book">
+      <svg class="icon-pluss" role="presentation">
+        <use xlink:href="<%= asset_url("icons/icons-defs.svg" + "#pluss") %>"></use>
+      </svg>
+      Add Book
+    </button>
   </div>
