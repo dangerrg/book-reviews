@@ -9,7 +9,10 @@
     <ul class="bare-list float-grid css-grid">
       <% @reviews.each do |review| %>
         <li>
-          <%= render(partial: 'editable_review_card', locals: { book_title: review.book_title, body: review.body, author: review.author }) %>
+          <%= render(partial: 'editable_review_card', locals: { book_title: review.book_title,
+                                                                body: review.body,
+                                                                author: review.author,
+                                                                review: review }) %>
         </li>
       <% end %>
     </ul>

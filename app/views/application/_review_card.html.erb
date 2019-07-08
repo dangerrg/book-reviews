@@ -1,8 +1,8 @@
 <div class="card">
   <div class="card__thumb">
-    <a href="reviews/one-example-review.html">
+    <%= link_to(show_review_path(review)) do %>
       <%= render(partial: 'review_photo', locals: { image_url: image_url }) %>
-    </a>
+    <% end %>
     <div class="card__intro">
       <h4 class="card__title"><%= card_title %></h4>
       <span>by <%= author %></span>

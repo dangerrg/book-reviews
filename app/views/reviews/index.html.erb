@@ -5,9 +5,13 @@
   <div class="content-wrapper">
     <% if(@reviews.any?) %> <%# conditional to display 'No reviews found' text %>
       <ul class="bare-list float-grid css-grid">
-        <% @reviews.each do |review| %> <%# Iterate Idea instances in reviews index %>
+        <% @reviews.each do |review| %> <%# Iterate review instances in reviews index %>
           <li>
-            <%= render(partial: 'review_card', locals: { card_title: review.book_title, author: review.author, body: review.body, image_url: review.image_url, review: review }) %>
+            <%= render(partial: 'review_card', locals: { card_title: review.book_title,
+                                                         author: review.author,
+                                                         body: review.body,
+                                                         image_url: review.image_url,
+                                                         review: review }) %>
           </li>
         <% end %>
       </ul>
