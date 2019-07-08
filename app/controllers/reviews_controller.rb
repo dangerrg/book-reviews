@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class ReviewsController < ApplicationController
   def index
     @search_term = params[:q]
@@ -28,5 +26,15 @@ class ReviewsController < ApplicationController
 
   def edit
     @review = Review.find(params[:id])
+  end
+
+  def update
+    review = Review.find(params[:id])
+    review.book_title = params[:book_title]
+    review.body = params[:body]
+    review.image_url = params[:image_url]
+    review.author = params[:author]
+    review.save!
+    redirect_to account_reviews_path
   end
 end

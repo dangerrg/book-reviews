@@ -1,4 +1,4 @@
-<%= form_tag(edit_review_path(@review), class: 'global-search') do %>
+<%= form_tag(review_path(@review), method: 'PATCH', class: 'global-search') do %>
   <div class="input-group input-group--horizontal">
     <%= label_tag('Book Title', nil, class: "input-group__label") %>
     <%= text_field_tag('book_title', @review.book_title, class: 'input-group__field', placeholder: 'E.g. Fifty Shades of Grey') %>

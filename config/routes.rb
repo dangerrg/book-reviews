@@ -15,6 +15,8 @@ Rails.application.routes.draw do
 
   get '/reviews/:id/edit', to: 'reviews#edit', as: 'edit_review'
 
+  patch '/reviews/:id', to: 'reviews#update', as: 'review'
+
   get 'account/reviews'
 
   resources :users
