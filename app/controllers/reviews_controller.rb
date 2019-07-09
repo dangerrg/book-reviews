@@ -14,7 +14,7 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    review = Review.new(reviews_params)
+    review = Review.new(review_resource_params)
     review.save!
     redirect_to reviews_index_path
   end
@@ -30,10 +30,6 @@ class ReviewsController < ApplicationController
   end
 
   private
-
-  def reviews_params
-    params.permit(:book_title, :body, :image_url, :author)
-  end
 
   def review_resource_params
     params.require(:review).permit(:book_title, :body, :image_url, :author)

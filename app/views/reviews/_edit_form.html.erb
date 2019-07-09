@@ -5,7 +5,7 @@
   </div>
   <div class="input-group input-group--horizontal">
     <%= form.label(:body, class: "input-group__label") %>
-    <%= form.text_field(:body, class: 'input-group__field', placeholder: 'What is the book about?') %>
+    <%= form.text_area(:body, class: 'input-group__field', placeholder: 'What is the book about?') %>
   </div>
   <div class="input-group input-group--horizontal">
     <%= form.label(:image_url, class: "input-group__label") %>
@@ -17,6 +17,6 @@
   </div>
   <div class="prompt">
     <a class="prompt__cancel" href="#cancel">Cancel</a>
-    <%= form.submit('Update review', class: 'btn btn--primary prompt__confirm') %>
+    <%= form.submit(class: 'btn btn--primary prompt__confirm') %>
   </div>
 <% end %>
