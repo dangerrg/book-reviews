@@ -25,7 +25,7 @@ class ReviewsController < ApplicationController
 
   def update
     review = Review.find(params[:id])
-    review.update(reviews_params)
+    review.update(review_resource_params)
     redirect_to account_reviews_path
   end
 
@@ -33,5 +33,9 @@ class ReviewsController < ApplicationController
 
   def reviews_params
     params.permit(:book_title, :body, :image_url, :author)
+  end
+
+  def review_resource_params
+    params.require(:review).permit(:book_title, :body, :image_url, :author)
   end
 end
