@@ -5,17 +5,7 @@ Rails.application.routes.draw do
 
   get 'users/new'
 
-  get '/reviews/index'
-
-  get '/reviews/new'
-
-  post '/reviews/create'
-
-  get '/reviews/:id/show', to: 'reviews#show', as: 'show_review'
-
-  get '/reviews/:id/edit', to: 'reviews#edit', as: 'edit_review'
-
-  patch '/reviews/:id', to: 'reviews#update', as: 'review'
+  resources :reviews
 
   get 'account/reviews'
 

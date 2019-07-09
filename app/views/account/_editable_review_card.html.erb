@@ -1,12 +1,12 @@
 <div class="card">
   <div class="card__thumb">
-    <%= link_to(show_review_path(review)) do %>
+    <%= link_to(review_path(review)) do %>
       <img src="http://fpoimg.com/255x170" alt="Aurora in search of the northern lights">
-    <div class="card__intro">
-      <h4 class="card__title"><%= review.book_title %></h4>
-      <span>by <%= review.author %></span>
-      <p><%= review.body %></p>
-    </div>
+      <div class="card__intro">
+        <h4 class="card__title"><%= review.book_title %></h4>
+        <span>by <%= review.author %></span>
+        <p><%= review.body %></p>
+      </div>
     <% end %>
   </div>
   <div class="card__footer">

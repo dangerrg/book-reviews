@@ -1,11 +1,10 @@
 <div class="card">
   <div class="card__thumb">
-    <%= link_to(show_review_path(review)) do %>
+    <%= link_to(review_path(review)) do %>
       <%= render(partial: 'review_photo', locals: { image_url: image_url }) %>
       <div class="card__intro">
         <h4 class="card__title"><%= card_title %></h4>
-        <span>by
-          <%= author %></span>
+        <span>by <%= author %></span>
         <p><%= body %></p>
       </div>
     <% end %>
@@ -24,3 +23,4 @@
       Add Book
     </button>
   </div>
+</div>
