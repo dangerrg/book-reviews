@@ -19,7 +19,7 @@
                 <svg class="icon-check icon--sm" role="presentation">
                   <use xlink:href="<%= asset_url("icons/icons-defs.svg" + "#edit") %>"></use>
                 </svg>
-              Edit
+                Edit
               </a>
             </li>
             <li>
@@ -40,7 +40,9 @@
             <span>Created on
               <time datetime="2017-08-27T03:48"><%= @review.created_at.strftime("%d %b '%y") %></time>
             </span>
-            <span>by <%= @review.author %> </span>
+            <span>by
+              <%= @review.author %>
+            </span>
             <span>
               <a href="#comments">3 comments</a>
             </span>
@@ -68,17 +70,16 @@
   </div>
   <div class="content-wrapper">
     <div class="comments">
-      <h2 class="comments__title">Discussion
-        <span>3 comments</span></h2>
+      <h2 class="comments__title">Discussion<span> 3 comments</span></h2>
 
-      <form class="comments__input" action="goal.html" method="post">
+      <%= form_for([@review, @comment], html: { class: 'comments__input' }) do |form| %>
         <%= image_tag('avatar', alt: 'Default avatar') %>
         <div class="input-group">
-          <label class="input-group__label" for="comment">Add a comment</label>
-          <textarea id="comment" class="input-group__field"></textarea>
+          <%= form.label(:body, 'Add a comment', class: 'input-group__label') %>
+          <%= form.text_area(:body, class: 'input-group__field') %>
         </div>
-        <button class="btn btn--primary" type="submit">Post</button>
-      </form>
+        <%= form.submit('Post', class: 'btn btn--primary') %>
+      <% end %>
 
       <ul class="comments__listing">
         <li class="comment">
