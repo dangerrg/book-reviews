@@ -56,4 +56,21 @@ class ReviewTest < ActiveSupport::TestCase
     assert_equal Review.most_recent.length, 6
     assert_equal Review.most_recent.first.book_title, 'Fast and Furious 6'
   end
+
+  test 'presence of book title' do
+    review = Review.new
+    refute review.valid?
+  end
+
+  test 'maximum length of author' do
+    review = Review.new book_title: 'Fast and Furious saga 3',
+                        author: 'Trista Ann Michaels, Trista Ann Michaels, Trista Ann Michaels, Trista Ann Michaels, Trista Ann Michaels, Trista Ann Michaels',
+                        user: User.new
+    refute review.valid?
+  end
+
+  test 'presence of author' do
+    review = Review.new book_title: 'Fast and Furious saga 3'
+    assert review.valid?
+  end
 end
