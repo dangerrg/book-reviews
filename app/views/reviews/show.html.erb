@@ -82,33 +82,17 @@
       <% end %>
 
       <ul class="comments__listing">
+        <%= @review.comments.each do |comment| %>
         <li class="comment">
           <%= image_tag('avatar', alt: 'Default avatar') %>
           <div class="comment__body">
             <h3 class="comment__title">Tom Jenkinson
               <time datetime="2017-08-28T13:48">Today</time>
             </h3>
-            <p>I've done this and it's amazing! I'll never forget it.</p>
+            <p><%= comment.body %></p>
           </div>
         </li>
-        <li class="comment">
-          <%= image_tag('avatar', alt: 'Default avatar') %>
-          <div class="comment__body">
-            <h3 class="comment__title">Emily Walker
-              <time datetime="2017-08-27T03:48">Yesterday</time>
-            </h3>
-            <p>When do you think that you'll get a chance to do this? Have you already planned it?</p>
-          </div>
-        </li>
-        <li class="comment">
-          <%= image_tag('avatar', alt: 'Default avatar') %>
-          <div class="comment__body">
-            <h3 class="comment__title">Claire Prince
-              <time datetime="2016-06-10T09:48">10. June 2016</time>
-            </h3>
-            <p>I'm thinking about this as well.</p>
-          </div>
-        </li>
+       <% end %>
       </ul>
     </div>
   </div>
