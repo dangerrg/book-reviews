@@ -1,3 +1,8 @@
+<% if(review.errors.any?) %>
+  <div class="alert alert--wide alert-warning" role="alert">
+    <%= review.errors.full_messages.join(' <br /> ') %>
+  </div>
+<% end %>
 <%= form_for(@review, html: { class: 'form--inpage' }) do |form| %>
   <div class="input-group input-group--horizontal">
     <%= form.label(:book_title, class: 'input-group__label') %>

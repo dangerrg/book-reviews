@@ -14,9 +14,12 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    review = Review.new(review_resource_params)
-    review.save!
-    redirect_to reviews_index_path
+    @review = Review.new(review_resource_params)
+    if @review.save
+      redirect_to reviews_path
+    else
+      render 'new'
+    end
   end
 
   def edit
@@ -24,9 +27,12 @@ class ReviewsController < ApplicationController
   end
 
   def update
-    review = Review.find(params[:id])
-    review.update(review_resource_params)
-    redirect_to account_reviews_path
+    @review = Review.find(params[:id])
+    if @review.update(review_resource_params)
+      redirect_to account_reviews_path
+    else
+      render 'edit'
+    end
   end
 
   private
