@@ -2,6 +2,8 @@ class Review < ApplicationRecord
   validates :book_title, presence: true
   validates :author, length: { maximum:100 }, allow_blank: true
 
+  has_many :comments
+  
   belongs_to :user, optional: true
   
   def self.most_recent

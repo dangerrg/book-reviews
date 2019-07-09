@@ -5,7 +5,9 @@ Rails.application.routes.draw do
 
   get 'users/new'
 
-  resources :reviews
+  resources :reviews do
+    resources :comments
+  end
 
   get 'account/reviews'
 
