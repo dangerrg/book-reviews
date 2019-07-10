@@ -8,6 +8,12 @@ class ReviewsController < ApplicationController
   def show
     @review = Review.find(params[:id])
     @comment = Comment.new
+
+    if(session[:user_id].present?) #check whether users are logged in or not
+      @user = User.find(session[:user_id])
+    else
+      @user = nil
+    end
   end
 
   def new

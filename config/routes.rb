@@ -5,12 +5,14 @@ Rails.application.routes.draw do
 
   get 'users/new'
 
+  resources :users do
+    resources :books
+  end
+
   resources :reviews do
     resources :comments
   end
 
   get 'account/reviews'
-
-  resources :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
