@@ -22,7 +22,9 @@ class ReviewsController < ApplicationController
   end
 
   def create
+    user = User.find(session[:user_id])
     @review = Review.new(review_resource_params)
+    @review.user = user
     if @review.save
       redirect_to reviews_path
     else
