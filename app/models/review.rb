@@ -3,7 +3,9 @@ class Review < ApplicationRecord
   validates :author, length: { maximum:100 }, allow_blank: true
 
   has_many :comments
-  
+
+  has_and_belongs_to_many :users
+
   belongs_to :user, optional: true
   
   def self.most_recent
