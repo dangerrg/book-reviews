@@ -11,6 +11,7 @@ class ReviewsController < ApplicationController
 
     if(session[:user_id].present?) #check whether users are logged in or not
       @user = User.find(session[:user_id])
+      @disable_add_book = @user.books.exists?(@review.id)
     else
       @user = nil
     end

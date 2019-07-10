@@ -26,7 +26,7 @@
               <% if(@user.present?) %>
                 <%= form_tag(user_books_path(@user)) do %>
                   <%= hidden_field_tag('review_id', @review.id) %>
-                  <%= button_tag(class: 'btn delta', type: 'submit') do %>
+                  <%= button_tag(class: 'btn delta', type: 'submit', disable: @disable_add_book) do %>
                     <svg class="icon-heart icon--sm" role="presentation">
                       <use xlink:href="<%= asset_url("icons/icons-defs.svg" + "#heart") %>"></use>
                     </svg>
