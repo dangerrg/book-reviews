@@ -728,43 +728,6 @@ h6 {
 
 
 /* ==========================================================================
-   COLOURS
-   ========================================================================== */
-
-[data-bgColor="blue"] {
-    background-color: #2c9cf2;
-}
-
-[data-bgColor="black"] {
-    background-color: #192127;
-}
-
-[data-bgColor="darkest"] {
-    background-color: #72797e;
-}
-
-[data-bgColor="dark"] {
-    background-color: #afbac4;
-}
-
-[data-bgColor="gray"] {
-    background-color: #bbc1c6;
-}
-
-[data-bgColor="light"] {
-    background-color: #e3e5e9;
-}
-
-[data-bgColor="lightest"] {
-    background-color: #f7f9fc;
-}
-
-[data-bgColor="red"] {
-    background-color: #e25d43;
-}
-
-
-/* ==========================================================================
    BUTTONS
    ========================================================================== */
 
@@ -1915,30 +1878,3 @@ table {
  * The content itself will be the same, in the same order, both
  * with and without Flexbox.
  */
-
-
-/*ul*/
-
-.sg-palette {
-    display: flex;
-    flex-wrap: wrap;
-    align-content: flex-start;
-    list-style-type: none;
-    padding: 0;
-}
-
-.sg-palette li {
-    flex-basis: 14%;
-    margin: 0 1.6em 0 0;
-}
-
-
-/* Attribute selectors are supported in IE7 and up */
-
-.sg-palette [data-bgColor] {
-    height: 4em;
-}
-
-.sg-dark-bg {
-    background-color: #192127;
-}
