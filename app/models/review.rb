@@ -6,7 +6,7 @@ class Review < ApplicationRecord
 
   has_and_belongs_to_many :users
 
-  belongs_to :user, optional: true
+  belongs_to :user
   
   def self.most_recent
     all.order(created_at: :desc).limit(6)

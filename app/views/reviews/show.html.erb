@@ -49,7 +49,7 @@
               <%= @review.author %>
             </span>
             <span>
-              <a href="#comments">3 comments</a>
+              <a href="#comments"><%= @review.comments.count %> comments</a>
             </span>
           </div>
           <ul class="tags-list">
@@ -75,7 +75,7 @@
   </div>
   <div class="content-wrapper">
     <div class="comments">
-      <h2 class="comments__title">Discussion<span> 3 comments</span></h2>
+      <h2 class="comments__title">Discussion<span> <%= @review.comments.count %> comments</span></h2>
 
       <% if(@display_add_comment) %>
         <%= form_for([@review, @comment], html: { class: 'comments__input' }) do |form| %>
@@ -88,13 +88,13 @@
         <% end %>
       <% end %>
 
-      <ul class="comments__listing">
+      <ul class="comments__listing" id="comments">
        <% @review.comments.each do |comment| %>
         <li class="comment">
           <%= image_tag('avatar', alt: 'Default avatar') %>
           <div class="comment__body">
             <h3 class="comment__title">Tom Jenkinson
-              <time datetime="2017-08-28T13:48">Today</time>
+              <time datetime="2017-08-28T13:48"><%= comment.created_at.strftime("%d %b '%y") %></time>
             </h3>
             <p><%= comment.body %></p>
           </div>
