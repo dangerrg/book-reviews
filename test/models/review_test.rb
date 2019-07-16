@@ -70,7 +70,9 @@ class ReviewTest < ActiveSupport::TestCase
   end
 
   test 'presence of author' do
-    review = Review.new book_title: 'Fast and Furious saga 3'
+    review = Review.new book_title: 'Fast and Furious saga 3',
+                        author: '',
+                        user: User.new
     assert review.valid?
   end
 end
