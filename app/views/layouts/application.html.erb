@@ -29,36 +29,41 @@
                 <li class="nav-item">
                   <%= link_to('My Reviews', account_reviews_path) %>
                 </li>
-              <% end %>
             </ul>
           </nav>
           <%= render(partial: 'search_form') %>
-          <nav class="siteHeader__personal">
+          <nav class="siteHeader__primaryNavInline">
             <ul class="main-navigation">
-              <% if(@user.nil?) %>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <%= @user.email %>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <%= link_to('Home', root_path) %>
+                  <a class="dropdown-item" href="/about.html">About</a>
+                  <%= link_to('My Reviews', account_reviews_path) %>
+                  <div class="dropdown-divider"></div>
+                  <%= link_to('Log out', root_path) %>
+                </div>
+              </li>
+            </ul>
+          </nav>
+          <% else %>
+            </ul>
+          </nav>
+          <%= render(partial: 'search_form') %>
+            <nav class="siteHeader__primaryNavInline">
+              <ul class="main-navigation">
                 <li class="nav-item">
                   <%= link_to('Log In', new_user_path) %>
                 </li>
-              <% end %>
-              <% if(@user.present?) %>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <%= @user.email %>
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <%= link_to('Home', root_path) %>
-                    <a class="dropdown-item" href="/about.html">About</a>
-                    <%= link_to('My Reviews', account_reviews_path) %>
-                    <div class="dropdown-divider"></div>
-                    <%= link_to('Log out', root_path) %>
-                  </div>
-                </li>
-              <% end %>
-            </ul>
-          </nav>
+              </ul>
+            </nav>
+          <% end %>
         </div>
       </div>
     </header>
+
 
     <%= yield %>
 
@@ -69,9 +74,15 @@
         </div>
         <nav class="footer__navigation">
           <ul>
-            <li><a href="/about.html">About</a></li>
-            <li><a href="#nolink">Privacy policy</a></li>
-            <li><a href="#nolink">Terms of Use</a></li>
+            <li>
+              <a href="/about.html">About</a>
+            </li>
+            <li>
+              <a href="#nolink">Privacy policy</a>
+            </li>
+            <li>
+              <a href="#nolink">Terms of Use</a>
+            </li>
           </ul>
         </nav>
         <p class="copyright">&copy; RoyaLWDev 2019</p>

@@ -5,7 +5,7 @@ class ReviewCommentsTest < ApplicationSystemTestCase
     user = User.new email: 'user_email@epfl.ch'
     user.save!
 
-    review = Review.new book_title: 'Commented review', user: user
+    review = Review.new book_title: 'Memoirs of a Geisha', author:'', user: user
     review.save
 
     visit(new_user_path)
@@ -13,14 +13,14 @@ class ReviewCommentsTest < ApplicationSystemTestCase
     click_on('Log in')
 
     visit(review_path(review))
-    fill_in('Add a comment', with: 'This review has been commented')
+    fill_in('Add a comment', with: "I read this a long time ago ---(a favorite) --- Its amazing a 'male' wrote this book. (sure 'felt' like a female speaking).")
     click_on('Post', match: :first)
     assert_equal review_path(review), page.current_path
-    assert page.has_content?('This review has been commented')
+    assert page.has_content?("I read this a long time ago ---(a favorite) --- Its amazing a 'male' wrote this book. (sure 'felt' like a female speaking).")
   end
 
   test 'comments cannot be added when not logged in' do
-    review = Review.new book_title: 'Try archery', user: User.new
+    review = Review.new book_title: 'Try God Help the Child', author: 'Toni Morrison', user: User.new
     review.save!
 
     visit(review_path(review))
